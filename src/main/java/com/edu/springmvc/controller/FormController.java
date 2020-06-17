@@ -16,16 +16,23 @@ import java.util.Map;
  */
 @Controller
 public class FormController {
-    @PostMapping("/apply")
-    @ResponseBody
-    public String apply(Form form){
-        // 复合数据不能用Map
-        System.out.println(form);
-        return "Success";
-    }
+//    @PostMapping("/apply")
+//    @ResponseBody
+//    public String apply(Form form){
+//        // 复合数据不能用Map
+//        System.out.println(form);
+//        return "Success";
+//    }
     public String apply(@RequestParam Map map){
         // 复合数据不能用Map
         System.out.println(map);
+        return "Success";
+    }
+
+    @PostMapping("/apply")
+    @ResponseBody
+    public String apply(Form form){
+        System.out.println(form);
         return "Success";
     }
 }

@@ -1,8 +1,11 @@
 package com.edu.springmvc.controller;
 
 import com.edu.springmvc.entity.User;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * @author Wuqili
@@ -22,8 +25,8 @@ public class URLMappingController {
     }
     @PostMapping("/p")
     @ResponseBody
-    public String PostMapping(String username, String password){
-        System.out.println(username+":"+password);
+    public String PostMapping(String username, String password, @DateTimeFormat(pattern = "yyyy-MM-dd") Date createTime){
+        System.out.println(username+":"+password+":"+createTime);
         return "This is post method";
     }
 

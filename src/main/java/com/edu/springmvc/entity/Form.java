@@ -11,8 +11,13 @@ public class Form {
     private String name;
     private String course;
     private List<String> purpose;
+    private Delivery delivery = new Delivery();
 
-    public Form() {
+    public Form(String name, String course, List<String> purpose, Delivery delivery) {
+        this.name = name;
+        this.course = course;
+        this.purpose = purpose;
+        this.delivery = delivery;
     }
 
     @Override
@@ -21,7 +26,19 @@ public class Form {
                 "name='" + name + '\'' +
                 ", course='" + course + '\'' +
                 ", purpose=" + purpose +
+                ", delivery=" + delivery +
                 '}';
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
+    }
+
+    public Form() {
     }
 
     public String getName() {
