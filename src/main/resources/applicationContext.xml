@@ -45,4 +45,26 @@
             </set>
         </property>
     </bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截所有  -->
+            <mvc:mapping path="/**"/>
+            <!-- 拦截指定URI -->
+            <mvc:mapping path="/restful/**"/>
+            <!-- 拦截指定目录下的所有资源-->
+            <mvc:exclude-mapping path="/resource/**"/>
+            <bean class="com.edu.springmvc.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/resource/**"/>
+            <bean class="com.edu.springmvc.interceptor.AccessHistoryInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>

@@ -6,10 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page isELIgnored="false" %>
 <html>
 <head>
     <title>RESTFUL实验室</title>
-    <script src="${pageContext.request.contextPath}/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.min.js"></script>
     <script>
         $(function () {
             $("#btnGet").click(function () {
